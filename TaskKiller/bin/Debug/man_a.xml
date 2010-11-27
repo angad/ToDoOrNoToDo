@@ -1,0 +1,85 @@
+<todoornotodo_man>
+
+
+<man>Welcome to Help Section of Deadline Killer! &#xD &#xD
+
+We would be following these conventions for all the commands in this application: &#xD
+Type -s followed by the priority of the task, which can be either 0 (unstarred) or 1 (starred/high priority). It is taken to be 0 by default. &#xD
+Type –t followed by deadline of the task. &#xD
+Type -d followed by a description of the task. &#xD
+Type -n followed by the name of the task to edit the name of the task. &#xD
+The commands are case-sensitive, meaning that Capital case commands like “ADD newtask” would not work. &#xD
+</man>
+
+
+<ls>Display List of Tasks: &#xD &#xD
+
+ls &#xD
+list &#xD
+
+This command would display the updated list of all the tasks. &#xD
+Since the updated task list would be displayed continuously in the Output Box, this command is useful only when the user is in help or Done Tssks view and wishes to view the list of tasks again. The same could be done by pressing the Home button on top left. &#xD
+</ls>
+
+
+<rm>Remove Tasks: &#xD &#xD
+rm 20 &#xD
+remove 20 &#xD
+delete 20 &#xD
+del 20 &#xD &#xD
+
+Either of the above four commands could be used to achieve the same purpose. 20 in the above example is the Task ID created automatically by the system and assigned uniquely to every task. The user can browse through the list of tasks to find the ID of the task to be deleted. &#xD
+There is also a ‘Delete’ button beside every task. &#xD
+</rm>
+
+
+<edit>Edit a Task: &#xD &#xD
+
+edit 20 –n install the software ToDoOrNoToDo –s 1 –d This task manager is very useful – t 08/11/2010 &#xD &#xD
+	
+While editing a task, the command ‘edit’ is followed by the task ID, which can be found from the list of tasks. One or more out of the deadline, priority and description can be edited in the same command. &#xD
+The name, deadline or description of a task can be edited by double clicking the relevant field in the display area. &#xD
+</edit>
+
+
+<add>install ToDoOrNoToDo &#xD &#xD
+
+add install ToDoOrNoToDo &#xD &#xD
+
+add download ToDoOrNoToDo –s 1 –t 07/11/10 –d It is a cool task manager &#xD &#xD
+
+The command ‘add’ is optional. Thus, the first two commands do identical functions. While adding a task, the name of the task is compulsory whereas deadline, priority and description are optional. Moreover, the deadline, priority and description can be input in any order. &#xD
+
+We would be following these conventions for all the commands in this application: &#xD
+Type -s followed by the priority of the task, which can be either 0 (unstarred) or 1 (starred/high priority). It is taken to be 0 by default. &#xD
+Type –t followed by deadline of the task. &#xD
+Type -d followed by a description of the task. &#xD
+Type -n followed by the name of the task to edit the name of the task. &#xD
+The commands are case-sensitive, meaning that Capital case commands like “ADD newtask” would not work. &#xD
+
+</add>
+
+
+
+<star>star 2 &#xD &#xD
+
+This command would star task number 2. If the task is already starred, this command would unstar it. A task can also be starred or unstarred by clicking on the Star button next to each task. &#xD
+</star>
+
+
+
+<undo>Undo &#xD &#xD
+
+This command would undo the last change made to the task list. &#xD
+</undo>
+
+
+
+<exit>exit &#xD
+quit &#xD &#xD
+
+This command would close the application. The application can also be closed using the X button on the right side of the window. &#xD
+</exit>
+
+
+</todoornotodo_man>

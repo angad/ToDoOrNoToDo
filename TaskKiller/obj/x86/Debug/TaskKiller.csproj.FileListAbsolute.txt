@@ -1,0 +1,13 @@
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\MainWindow.baml
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\MainWindow.g.cs
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\App.g.cs
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\TaskKiller_MarkupCompile.cache
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\TaskKiller.g.resources
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\TaskKiller.Properties.Resources.resources
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\bin\Debug\TaskKiller.exe
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\bin\Debug\TaskKiller.pdb
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\TaskKiller.exe
+C:\Users\MHung\Desktop\TaskKiller\TaskKiller\obj\x86\Debug\TaskKiller.pdb

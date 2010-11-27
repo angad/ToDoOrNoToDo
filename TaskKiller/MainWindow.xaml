@@ -1,0 +1,190 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:View" Title="MainWindow" Height="480" Width="360" ResizeMode="CanMinimize"
+        Activated="ActivatedHandler"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="DragWindow"
+        WindowState="Normal" WindowStyle="None" OpacityMask="{x:Null}" Icon="/ToDoOrNoToDo;component/image/icon.ico">
+    <Window.BorderBrush>
+        <ImageBrush />
+    </Window.BorderBrush>
+    <!--Title="MainWindow" SizeChanged="Window_SizeChanged" MinHeight="350" Height="350" Width="535" MaxWidth="535" MinWidth="535" MaxHeight="535" ResizeMode="CanResize" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+    -->
+    <Grid Height="489" Width="348">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="502*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Height="23" HorizontalAlignment="Left" Margin="36,72,0,0" Name="cmdline" VerticalAlignment="Top" Width="265">
+            <Grid.Background>
+                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/cmd.png" />
+            </Grid.Background>
+        </Grid>
+        <TextBox Name="commandLine" 
+                 Margin="61,75,62,377" 
+                 BorderBrush="{x:Null}" 
+                 Background="{x:Null}" 
+                 Foreground="White" 
+                 FontFamily="Courier New">
+        </TextBox>
+        <TextBlock Padding="20,20, 0, 0" TextWrapping="Wrap" Height="119" Margin="0,357,35,0" Name="status" VerticalAlignment="Top" Foreground="Black" FontFamily="Courier New" HorizontalAlignment="Right" Width="287">
+            <TextBlock.Background>
+                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/status.png" />
+            </TextBlock.Background>
+        </TextBlock>
+        <Grid Name="TextUIElement" Margin="0,0,0,0">
+            <RichTextBox Height="242" Margin="34,0,46,141" Name="terminal" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="Black" FontFamily="Courier New" AcceptsReturn="True" CaretBrush="Black" IsReadOnlyCaretVisible="False" VerticalScrollBarVisibility="Visible" FontSize="12" Focusable="True" BorderBrush="{x:Null}">
+                <RichTextBox.Resources>
+
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+        </Grid>
+        <TextBlock Height="234" TextWrapping="Wrap" Name="manbox" Margin="44,106,60,0" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Courier New"></TextBlock>
+        <Grid Name="GuiElement" Grid.ColumnSpan="2" Margin="0,0,0,0">
+            <DataGrid Height="242"
+                      AutoGenerateColumns="False"
+                      ItemsSource="{Binding TaskListView}" 
+                      Name="taskListDataGrid" 
+                      Margin="0,106,48,0" 
+                      VerticalAlignment="Top" 
+                      CanUserResizeColumns="False"
+                      CanUserReorderColumns="False"
+                      GridLinesVisibility="None"
+                      HorizontalGridLinesBrush="#CCCCCCCC"
+                      VerticalGridLinesBrush="#CCCCCCCC" 
+                      BorderBrush="{x:Null}" 
+                      Foreground="Black" 
+                      CanUserResizeRows="False" 
+                      SelectionMode="Single" 
+                      SelectionUnit="FullRow" 
+                      CanUserAddRows="False" 
+                      ColumnHeaderHeight="20" 
+                      Background="{x:Null}" 
+                      HorizontalAlignment="Right"
+                      Width="266" 
+                      RowBackground="{x:Null}"
+                      FontFamily="Buxton Sketch"
+                      FontSize="15" FontWeight="Normal">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/brushbox.png" />
+
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="FontFamily" Value="Buxton Sketch"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.RowHeaderStyle>
+                    <Style TargetType="DataGridRowHeader">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/brushbox.png" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontSize" Value="13" />
+                    </Style>
+                </DataGrid.RowHeaderStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Width="25" Binding="{Binding ID}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header=" !" Width="20" Binding="{Binding Star}">
+                        <DataGridCheckBoxColumn.ElementStyle>
+                            <Style TargetType="{x:Type ToggleButton}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                            <Border x:Name="innerBorder">
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/un-star.png" Stretch="Fill" TileMode="None" />
+                                                </Border.Background>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter TargetName="innerBorder" Property="Background">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/s-tar.png" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGridCheckBoxColumn.ElementStyle>
+                        <DataGridCheckBoxColumn.CellStyle>
+                            <Style>
+                                <EventSetter Event="CheckBox.Checked" Handler="OnStarValueChanged"></EventSetter>
+                                <EventSetter Event="CheckBox.Unchecked" Handler="OnStarValueChanged"></EventSetter>
+                            </Style>
+                        </DataGridCheckBoxColumn.CellStyle>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Deadline" Width="60" Binding="{Binding Deadline}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="X">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Delete_Click" Height="17" Opacity="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/del.png"></ImageBrush>
+                                    </Button.Background>
+
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="+">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Done_Click" Height="17" Opacity="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/tick.png"></ImageBrush>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                <DataGrid.AlternatingRowBackground>
+                    <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/row_bg.png" />
+                </DataGrid.AlternatingRowBackground>
+            </DataGrid>
+            
+        </Grid>
+        <Grid Height="220" HorizontalAlignment="Left" Margin="55,77,0,0" Name="about_pic" Visibility="Hidden" VerticalAlignment="Top" Width="220">
+            <Grid.Background>
+                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/twinkletwinklelittlestar.png" />
+            </Grid.Background>
+
+        </Grid>
+        <Grid Height="29" HorizontalAlignment="Left" Margin="55,303,0,0" Name="about_name" Visibility="Hidden" VerticalAlignment="Top" Width="226">
+            <Grid.Background>
+                <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/ttls.png" />
+            </Grid.Background>
+        </Grid>
+        <Button Content="" Opacity="0" Height="36" HorizontalAlignment="Left" Margin="310,0,0,344" Name="minimize" Click="minimize_Click" VerticalAlignment="Bottom" Width="36" />
+        <Button Content="" Opacity="0" Height="35" HorizontalAlignment="Left" Margin="34,-3,0,0" Name="home" Click="home_Click" VerticalAlignment="Top" Width="81" />
+        <Button Content="" Opacity="0" Height="38" HorizontalAlignment="Left" Margin="307,303,0,0" Name="donetasks" Click="DoneTasks_Click" VerticalAlignment="Top" Width="43" />
+        <Button Content="" Opacity="0" Height="32" HorizontalAlignment="Left" Margin="309,71,0,0" Name="close" Click="close_Click" VerticalAlignment="Top" Width="34" />
+        <Button Content="" Opacity="0" Height="38" HorizontalAlignment="Left" Margin="309,400,0,0" Name="about"  Click="about_Click" VerticalAlignment="Top" Width="42" />
+        <Button Content="" Opacity="0" Height="37" HorizontalAlignment="Left" Margin="310,366,0,0" Name="help" Click="help_Click" VerticalAlignment="Top" Width="34" />
+        <!--        <Button Click="GetSelectedCells" Margin="105,223,123,44">Show selected cells</Button> -->
+        <Grid.Background>
+            <ImageBrush />
+        </Grid.Background>
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="/ToDoOrNoToDo;component/image/main_bg_plus_help.png" />
+    </Window.Background>
+</Window>
